@@ -9,6 +9,10 @@ module ApplicationHelper
     end
   end
 
+  def has_role?(role)
+    current_user&.has_role?(role)
+  end
+
   def markdown(text)
     coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)
     options = {
